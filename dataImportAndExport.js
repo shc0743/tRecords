@@ -17,6 +17,16 @@ export const parsers = {
         newData.id = computeId(newData);
         return newData;
     },
+    csv(row, computeId) {
+        const data = row.split(',');
+        const newData = {
+            date: data[1].substring(1, data[1].length - 1),
+            time: data[2].substring(1, data[2].length - 1),
+            value: data[0].substring(1, data[0].length - 1).replaceAll('\\"', '\"'),
+        };
+        newData.id = computeId(newData);
+        return newData;
+    },
 };
 export const formatters_poster = {
     tab(data, editDfName) {

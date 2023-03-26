@@ -1,12 +1,23 @@
 {
   "versions": [
     {
+      "id": "ebade8af-8e70-4b9f-b7f2-b48f062eb544",
+      "ver": "1.14",
+      "date": "2023-03-26 14:53:00",
+      "description": "增加数据导入的csv格式支持 （不是很完善）",
+      "releaseNotes": "versions/archives/1.14/release-notes.txt",
+      "resources": {
+        "manifest": "versions/archives/1.14/manifest.json"
+      }
+    },
+    {
       "id": "b5ed7458-e500-49af-b5e5-0ba4d15fe309",
       "ver": "1.13",
       "date": "2023-03-26 14:40:00",
       "description": "修复部分情况下无法安装旧版本的bug",
       "releaseNotes": "versions/archives/1.13/release-notes.txt",
       "resources": {
+        "base": "https://raw.githubusercontent.com/shc0743/tRecords/b364ef6bedf2e64920ffe4163b58d23f56d4afb0/",
         "manifest": "versions/archives/1.13/manifest.json"
       }
     },
@@ -17,6 +28,7 @@
       "description": "Release 1.12",
       "releaseNotes": "versions/archives/1.12/release-notes.txt",
       "resources": {
+        "base": "https://raw.githubusercontent.com/shc0743/tRecords/8d10493d1d36e404d88ef0c5b39a7d68b6acdaf2/",
         "manifest": "versions/archives/1.12/manifest.json"
       }
     },
@@ -37,10 +49,7 @@
       "date": "2023-03-26 12:00:00",
       "description": "This version is also for test only",
       "releaseNotes": "versions/archives/1.02/release-notes.txt",
-      "resources": {
-        "base": "/tRecords/archive/1.02/",
-        "manifest": "versions/archives/1.02/manifest.json"
-      }
+      "resources": {}
     },
     {
       "id": "cadf0618-54ce-4493-a99d-c5b4c85ba712",
