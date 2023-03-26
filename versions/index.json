@@ -1,6 +1,16 @@
 {
   "versions": [
     {
+      "id": "b5ed7458-e500-49af-b5e5-0ba4d15fe309",
+      "ver": "1.13",
+      "date": "2023-03-26 14:40:00",
+      "description": "修复部分情况下无法安装旧版本的bug",
+      "releaseNotes": "versions/archives/1.13/release-notes.txt",
+      "resources": {
+        "manifest": "versions/archives/1.13/manifest.json"
+      }
+    },
+    {
       "id": "9685cbc3-f840-4f86-b7e7-41784c3306e1",
       "ver": "1.12",
       "date": "2023-03-26 14:10:00",
