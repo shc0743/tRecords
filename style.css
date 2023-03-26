@@ -1,0 +1,139 @@
+
+
+body {
+    margin: 0; padding: 0;
+}
+*:has(dialog:modal) {
+    overflow: hidden;
+}
+
+*:disabled, *[disabled] {
+    cursor: not-allowed;
+}
+a, button, summary {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+
+#app {
+    padding: var(--padding);
+
+    --padding: 10px;
+}
+
+
+#app .loading-mask {
+    display: none;
+    flex: 1;
+}
+/* #app.is-loading .app-related-content * {
+    pointer-events: none;
+} */
+#app.is-loading .loading-mask {
+    display: block;
+}
+#app.is-loading .app-records-container {
+    display: none;
+}
+
+
+.app-fixed-first-page-placeholder {
+    height: calc(100vh - var(--padding));
+}
+
+.app-fixed-first-page {
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+    inset: 0;
+    padding: var(--padding);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.app-records-container {
+    flex: 1;
+    overflow: auto;
+    --padding: 10px;
+    --padding-header: 15px;
+}
+.app-records-header {
+    position: sticky;
+    top: 0;
+    background-color: var(--color-scheme-background, #ffffff);
+    font-weight: bold;
+}
+#records, .app-records-header {
+    width: 100%;
+    text-align: center;
+}
+#records, #records tr, #records td,
+.app-records-header, .app-records-header tr, .app-records-header td {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    padding: var(--padding);
+}
+.app-records-header td {
+    font-size: large;
+    padding: var(--padding-header);
+}
+#records, #records tr:nth-child(1) , #records tr:nth-child(1) td {
+    border-top: 0;
+}
+.app-records-container td {
+    width: calc(100% / var(--table-column-count));
+    word-break: break-all;
+}
+.app-records-container .user-input {
+    padding: 0 !important;
+}
+.app-records-container .user-input input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: var(--padding);
+    font-size: larger;
+    border: 0;
+}
+#records .is-record td:not(:nth-last-child(1)) {
+    cursor: cell;
+}
+
+.app-related-content > details {
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+#data_export_result, #data_import {
+    box-sizing: border-box;
+    width: 100%;
+    resize: vertical;
+}
+
+.app-return-buttons {
+    padding-bottom: 5px;
+    border-bottom: 1px solid gray;
+}
+.app-return-buttons a {
+    font-size: larger;
+}
+.app-return-buttons a.ret::before {
+    content: "< ";
+    font-family: monospace;
+}
+
+.app-data-objectstore-card {
+    margin: 10px 0;
+    box-shadow: 0 0 3px 0 #ccc;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+

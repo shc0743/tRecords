@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>记录</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="favicon-192x192.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="style.css">
+    <script src="./sw_content.js"></script>
+    <script async src="webmanifest.js"></script>
+</head>
+<body>
+
+    <div id="app" class="is-loading">
+        <div class="app-fixed-first-page-placeholder"></div>
+        <div class="app-fixed-first-page">
+            <div class="app-return-buttons">
+                <a href="javascript:" class="ret" id="hback">返回</a>
+            </div>
+
+            <h1 id="recordName">记录</h1>
+
+            <p class="loading-mask">正在加载中，请稍候...</p>
+
+            <div class="app-records-container" style="--table-column-count: 4;">
+                <table class="app-records-header">
+                    <thead>
+                        <td>数据</td>
+                        <td>日期</td>
+                        <td>时间</td>
+                        <td>操作</td>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <table id="records">
+                    <colgroup>
+                        <col span="1">
+                        <col span="1">
+                        <col span="1">
+                        <col span="1">
+                    </colgroup>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <div class="app-records-pager" style="margin-top: var(--padding);">
+                <my-pager id="appRecordsPager"></my-pager>
+            </div>
+        </div>
+        
+        <div class="app-related-content">
+            <details open>
+                <summary>设置</summary>
+
+                <div style="margin: 10px 0;">
+                    <fieldset>
+                        <legend>数据</legend>
+                        <dialog><button id="confirmClearData">确定</button><button onclick="this.parentElement.close()">取消</button></dialog>
+                        <div><a href="javascript:" onclick="this.parentElement.previousElementSibling.showModal()">清除此对象存储中的所有记录</a></div>
+                    </fieldset>
+                </div>
+
+                <div style="margin: 10px 0;">
+                    <fieldset>
+                        <legend>导入/导出</legend>
+                        <details>
+                            <summary>导入/导出</summary>
+
+                            <fieldset>
+                                <legend>导出数据</legend>
+                                <div><textarea id="data_export_result" readonly rows="2" placeholder="点击下面的按钮以开始。"></textarea></div>
+                                <p>Format: <select id="data_export_format">
+                                    <option value="tab">Tab</option>
+                                    <option value="csv">CSV</option>
+                                    <option value="json">JSON (deprecated)</option>
+                                </select></p>
+                                <button id="exportData">导出</button>&nbsp;<button id="dlExported">下载</button>&nbsp;<button id="clearExportArea">清除</button>
+                            </fieldset>
+                            <fieldset>
+                                <legend>导入数据</legend>
+                                <div><textarea id="data_import" rows="10" placeholder="请输入数据。"></textarea></div>
+                                <div>或上传文件：<input id="data_import_f" type="file"></div>
+                                <p>Format: <select id="data_import_format">
+                                    <option value="tab">Tab</option>
+                                    <option value="csv">CSV</option>
+                                    <option value="json">JSON (deprecated)</option>
+                                </select></p>
+                                <button id="importData">导入</button>&nbsp;<button id="clearImportArea">清除</button>
+                            </fieldset>
+                        </details>
+                    </fieldset>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+    
+</body>
+</html>
