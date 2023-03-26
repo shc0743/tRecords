@@ -1,12 +1,23 @@
 {
   "versions": [
     {
+      "id": "9685cbc3-f840-4f86-b7e7-41784c3306e1",
+      "ver": "1.12",
+      "date": "2023-03-26 14:10:00",
+      "description": "Release 1.12",
+      "releaseNotes": "versions/archives/1.12/release-notes.txt",
+      "resources": {
+        "manifest": "versions/archives/1.12/manifest.json"
+      }
+    },
+    {
       "id": "e486b38d-0fa5-4fcf-a122-14c1ae09e7c0",
       "ver": "1.10",
-      "date": "2023-03-26 12:00:00",
+      "date": "2023-03-26 13:00:00",
       "description": "Release 1.10",
       "releaseNotes": "versions/archives/1.10/release-notes.txt",
       "resources": {
+        "base": "https://raw.githubusercontent.com/shc0743/tRecords/e54296616e3dcfcd6539c56ab2d15c9b98045f02/",
         "manifest": "versions/archives/1.10/manifest.json"
       }
     },
