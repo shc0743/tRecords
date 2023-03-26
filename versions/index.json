@@ -1,12 +1,23 @@
 {
   "versions": [
     {
+      "id": "87eff351-7a23-4e92-8d62-b075fed7b0dd",
+      "ver": "1.16",
+      "date": "2023-03-26 18:49:00",
+      "description": "修复苹果设备无法打开的bug",
+      "releaseNotes": "versions/archives/1.16/release-notes.txt",
+      "resources": {
+        "manifest": "versions/archives/1.16/manifest.json"
+      }
+    },
+    {
       "id": "ffa9ebdd-1620-49dd-bfcb-f7c1ec88c305",
       "ver": "1.15",
       "date": "2023-03-26 15:34:00",
       "description": "修复github源导致的一个问题，请不要降级到此版本前的任何版本(此版本及之后的版本可正常使用)，如果已经降级，请立即更新到最新版本",
       "releaseNotes": "versions/archives/1.15/release-notes.txt",
       "resources": {
+        "base": "https://raw.githubusercontent.com/shc0743/tRecords/66d967309f292f98251adeac88df5ee7cd09ea4a/",
         "manifest": "versions/archives/1.15/manifest.json"
       }
     },
