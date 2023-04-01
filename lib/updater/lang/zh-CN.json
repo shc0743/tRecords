@@ -35,6 +35,7 @@
     "iav_load": "重新加载版本列表",
     "iav_loading": "正在加载...",
     "p:cancel": "取消",
+    "p:retry": "重试",
     "p:error.invalidstat": "无效的 State",
     "p:error.failed$": "操作未能成功完成。错误：$1",
     "p:error.fatalfailed$": "致命错误: $1",

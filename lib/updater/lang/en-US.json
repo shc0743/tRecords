@@ -35,6 +35,7 @@
     "iav_load": "Reload versions list",
     "iav_loading": "Loading...",
     "p:cancel": "Cancel",
+    "p:retry": "Retry",
     "p:error.invalidstat": "Invalid State",
     "p:error.failed$": "The operation did not complete successfully. Error: $1",
     "p:error.fatalfailed$": "Fatal Error $1",

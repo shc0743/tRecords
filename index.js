@@ -98,43 +98,77 @@ if (Reflect.has(globalThis, 'swAlive')) {
 //#region data
 $('.loading-mask').innerHTML = '正在处理数据';
 for (let i = 0; i < 20; ++i){
+    const open = (ev) => {
+        const url = 'record.html?id=' + 'rec' + i
+        const blank = ev ? ((ev instanceof MouseEvent) ? (ev.button === 1) : (('ctrlKey' in ev) ? (ev.ctrlKey) : false)) : false;
+        Reflect[blank ? 'apply' : 'set'](blank ? window.open : window, blank ? window : 'location', blank ? [url, '_blank'] : url);
+    };
     const el = document.createElement('div');
-    el.className = 'app-data-objectstore-card';
-    const el1 = document.createElement('div');
-    el1.append('名称: ');
-    const ipt1 = document.createElement('input');
-    ipt1.maxLength = 128;
+    el.className = 'app-data-objectstore-card', el.tabIndex = 0, el.role = 'button';
+    const nameText = document.createElement('b'), nameEdit = document.createElement('input');
+    let objectStoreName = {
+        _ref: null,
+        get ref() { return this._ref },
+        set ref(value) {
+            this._ref = value;
+            nameText.innerText = nameEdit.value = value;
+            return true;
+        }
+    };
     try {
         const data = await userdata.get('rinfo', 'rec' + i)/* || {}*/;
         // if the data doesn't exists
         // access data.name will cause an error
         // so that we can use the default value
-        ipt1.value = data.name;
+        objectStoreName.ref = data.name;
     }
-    catch { ipt1.value = i; }
-    ipt1.onchange = async function () {
+    catch { objectStoreName.ref = i; }
+
+    const nameContainer = document.createElement('div');
+    nameContainer.className = 'app-data-objectstore-name';
+    const toggle = () => [nameText.style.display, nameEdit.style.display] = [nameEdit.style.display, nameText.style.display];
+    nameEdit.style.display = 'none';
+    nameEdit.maxLength = 128;
+    nameEdit.onclick = ev => ev.stopPropagation();
+    nameEdit.onchange = async function () {
         try {
-            if (!ipt1.value) throw '名称不能为空';
+            if (!nameEdit.value) throw '名称不能为空';
             const oldData = await userdata.get('rinfo', 'rec' + i) || {};
             const newData = structuredClone(oldData);
-            newData.name = ipt1.value;
+            newData.name = nameEdit.value;
             await userdata.put('rinfo', newData, 'rec' + i);
+            objectStoreName.ref = newData.name;
         } catch (error) { showTip('保存失败: ' + error) }
+    }
+    nameEdit.onblur = toggle;
+    nameContainer.append(nameText, nameEdit);
+    el.append(nameContainer);
+    nameText.innerText = objectStoreName.ref;
+
+    const details = document.createElement('p');
+    details.className = 'app-data-objectstore-details';
+    details.innerHTML = `<!--
+    --><div>内部名称: <span>${'rec' + i}</span></div><!--
+    -->`;
+    el.append(details);
+
+    const options = document.createElement('div');
+    options.className = 'app-data-objectstore-options';
+    const option1 = document.createElement('a');
+    option1.innerText = '编辑名称';
+    option1.href = 'javascript://app/record/item/edit';
+    option1.onclick = (ev) => {
+        ev.stopPropagation();
+        toggle();
+        nameEdit.focus();
     };
-    el1.append(ipt1);
-    el.append(el1);
-    const el2 = document.createElement('div');
-    el2.innerText = '内部名称: ' + 'rec' + i;
-    el.append(el2);
-    const el3 = document.createElement('div');
-    el3.append('操作: ');
-    const btn1 = document.createElement('button');
-    btn1.append('打开');
-    btn1.onclick = function () {
-        location = 'record.html?id=' + 'rec' + i;
-    };
-    el3.append(btn1);
-    el.append(el3);
+    options.append(option1);
+    el.append(options);
+
+    el.addEventListener('click', function (ev) { open(ev) });
+    el.addEventListener('mousedown', function (ev) { ev.button === 1 && open(ev) });
+    el.addEventListener('keyup', function (ev) { ev.target === this && ev.key === 'Enter' && open(ev) });
+
     $('.app-records-container').append(el);
 }
 //#endregion

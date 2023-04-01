@@ -133,6 +133,53 @@ a:hover {
     box-shadow: 0 0 3px 0 #ccc;
     padding: 10px;
     border-radius: 10px;
+    cursor: pointer;
+    transition: background-color .1s;
+}
+.app-data-objectstore-card:hover {
+    background-color: #f7f7f7;
+}
+.app-data-objectstore-card:active {
+    background-color: #f0f0f0;
+}
+@supports (display: grid) {
+.app-data-entry {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.app-data-objectstore-card {
+    margin: 5px;
+}
+@media (min-width: 400px) { .app-data-entry {
+    grid-template-columns: 1fr 1fr;
+} }
+@media (min-width: 800px) { .app-data-entry {
+    grid-template-columns: 1fr 1fr 1fr;
+} }
+@media (min-width: 1200px) { .app-data-entry {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+} }
+@media (min-width: 1600px) { .app-data-entry {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+} }
+}
+.app-data-objectstore-name > * {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+}
+.app-data-objectstore-name > input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.app-data-objectstore-details {
+    font-size: small;
+    color: gray;
+    margin: 10px 0;
+}
+.app-data-objectstore-options {
+    font-size: small;
 }
 
 

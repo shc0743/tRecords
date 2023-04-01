@@ -1,12 +1,23 @@
 {
   "versions": [
     {
+      "id": "bf5928f7-9706-48db-83a6-d0f6db678c10",
+      "ver": "1.17",
+      "date": "2023-04-01 12:30:00",
+      "description": "详见Release Note",
+      "releaseNotes": "versions/archives/1.17/release-notes.txt",
+      "resources": {
+        "manifest": "versions/archives/1.17/manifest.json"
+      }
+    },
+    {
       "id": "87eff351-7a23-4e92-8d62-b075fed7b0dd",
       "ver": "1.16",
       "date": "2023-03-26 18:49:00",
       "description": "修复苹果设备无法打开的bug",
       "releaseNotes": "versions/archives/1.16/release-notes.txt",
       "resources": {
+        "base": "https://raw.githubusercontent.com/shc0743/tRecords/7f89c14b86531c81f53a154bdd052ba846500986/",
         "manifest": "versions/archives/1.16/manifest.json"
       }
     },
@@ -24,6 +35,7 @@
     {
       "id": "ebade8af-8e70-4b9f-b7f2-b48f062eb544",
       "ver": "1.14",
+      "locked": true,
       "date": "2023-03-26 14:53:00",
       "description": "增加数据导入的csv格式支持 （不是很完善）",
       "releaseNotes": "versions/archives/1.14/release-notes.txt",
