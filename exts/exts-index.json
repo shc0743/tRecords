@@ -1,0 +1,8 @@
+[
+  {
+    "name": "数据: 求和 (SUM)",
+    "script": {
+      "type": "text/javascript", "path": "data/SUM.js"
+    }
+  }
+]

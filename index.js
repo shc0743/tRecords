@@ -95,6 +95,23 @@ if (Reflect.has(globalThis, 'swAlive')) {
 //#endregion
 
 
+//#region extension manager
+$('.loading-mask').innerHTML = '正在处理扩展程序';
+import { ExtensionManager } from './lib/ExtensionManager/manager.js';
+const extensionManager = new ExtensionManager({
+    getData(key) {
+        return userdata.get('config', 'extensionManager: ' + key);
+    },
+    setData(key, value) {
+        return userdata.put('config', value, 'extensionManager: ' + key);
+    },
+    indexPath: 'exts/exts-index.json',
+});
+extensionManager.mount($('#extManagerContainer'));
+
+//#endregion
+
+
 //#region data
 $('.loading-mask').innerHTML = '正在处理数据';
 for (let i = 0; i < 20; ++i){

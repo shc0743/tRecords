@@ -1,12 +1,23 @@
 {
   "versions": [
     {
+      "id": "82e4f2c2-6867-4cd8-9be8-abdd2b2c94f8",
+      "ver": "1.18",
+      "date": "2023-04-09 20:20:00",
+      "description": "详见Release Note",
+      "releaseNotes": "versions/archives/1.18/release-notes.txt",
+      "resources": {
+        "manifest": "versions/archives/1.18/manifest.json"
+      }
+    },
+    {
       "id": "bf5928f7-9706-48db-83a6-d0f6db678c10",
       "ver": "1.17",
       "date": "2023-04-01 12:30:00",
       "description": "详见Release Note",
       "releaseNotes": "versions/archives/1.17/release-notes.txt",
       "resources": {
+        "base": "https://raw.githubusercontent.com/shc0743/tRecords/854ad613b92fbedfbfb619b9e023c8ca8b3525f4/",
         "manifest": "versions/archives/1.17/manifest.json"
       }
     },

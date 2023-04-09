@@ -383,6 +383,22 @@ $('#confirmClearData').on('click', async function () {
 //#endregion
 
 
+//#region extension manager
+$('.loading-mask').innerHTML = '正在处理扩展程序';
+import { ExtensionManager } from './lib/ExtensionManager/manager.js';
+const extensionManager = new ExtensionManager({
+    getData(key) {
+        return userdata.get('config', 'extensionManager: ' + key);
+    },
+    setData(key, value) {
+        return userdata.put('config', value, 'extensionManager: ' + key);
+    },
+    indexPath: 'exts/exts-index.json',
+});
+
+//#endregion
+
+
 $('.loading-mask').innerHTML = '正在完成';
 await delay((Math.floor(Math.random() * 1000)));
 $().classList.remove('is-loading');

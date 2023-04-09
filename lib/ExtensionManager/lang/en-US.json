@@ -1,0 +1,17 @@
+{
+    "ext_d1": "You can use the <b>extensions</b> to add features, change behavior, and more to the application.",
+    "myext": "My Extensions",
+    "noext": "No Extensions",
+    "moreext": "Find more extensions online",
+    "chooseExt": "Choose a extension to install.",
+    "orInstallFromUrl": "Or install from URL:",
+    "install": "Install",
+    "cancel": "Cancel",
+    "formatNotSupported": "Format not supported",
+    "third-party-url-confirm": "Are you sure to install third-party source extensions?\nMalicious extensions can harm your security.",
+    "reloadReq": "A reload is required to apply changes.",
+    "reloadNow": "Reload Now",
+    "uninstall": "Uninstall",
+    "uninst.confirm": "Are you sure you want to uninstall?"
+
+}
