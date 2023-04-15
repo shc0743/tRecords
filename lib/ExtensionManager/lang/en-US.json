@@ -12,6 +12,7 @@
     "reloadReq": "A reload is required to apply changes.",
     "reloadNow": "Reload Now",
     "uninstall": "Uninstall",
-    "uninst.confirm": "Are you sure you want to uninstall?"
+    "uninst.confirm": "Are you sure you want to uninstall?",
+    "orInstallLocal": "Or install from a local file:"
 
 }

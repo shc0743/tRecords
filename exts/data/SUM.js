@@ -1,7 +1,7 @@
 /*[==BEGIN=EXTENSION=METADATA==]{
     "id": "f4858686-68db-4b30-9cdf-e497da61f700",
     "name": "数据: 求和 (SUM)",
-    "version": "1.0",
+    "version": "1.1",
     "scopes": ["record.html$"]
 }[==END=EXTENSION=METADATA==]*/
 
@@ -14,6 +14,7 @@ el.innerHTML = `
 <summary>数据: 求和 (SUM)</summary>
 
 <div>
+    <div><b>温馨提示</b>: 建议所有用户迁移到[统计 &lt;stat&gt;]扩展，以获得更好的使用体验</div>
     <div id=data_sum_result></div>
     <button id=data_sum_sum>SUM</button>
 </div>

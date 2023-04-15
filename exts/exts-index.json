@@ -4,5 +4,11 @@
     "script": {
       "type": "text/javascript", "path": "data/SUM.js"
     }
+  },
+  {
+    "name": "统计 <stat> 1.0",
+    "script": {
+      "type": "text/javascript", "path": "data/func1.js"
+    }
   }
 ]

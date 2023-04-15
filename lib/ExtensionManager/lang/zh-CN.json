@@ -12,6 +12,7 @@
     "reloadReq": "需要重新加载页面才能应用更改。",
     "reloadNow": "立即重新加载",
     "uninstall": "卸载",
-    "uninst.confirm": "确认卸载?"
+    "uninst.confirm": "确认卸载?",
+    "orInstallLocal": "或从本地文件安装:"
 
 }
