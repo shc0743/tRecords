@@ -22,7 +22,7 @@ el.innerHTML = `
         <input id=data_func_desc readonly style="margin: 0 0.5em; flex: 1; font-family: 'Consolas', monospace;">
         <button id=data_func_btn>Compute</button>
     </div>
-    <fieldset disabled>
+    <fieldset disabled hidden>
         <legend>[可选] 数据范围  &lt;开发中&gt;</legend>
         <div>
             <div>开始时间: <input type=date> <input type=time step=1>
@@ -131,7 +131,7 @@ dfb.onclick = async function () {
             catch { break; }
         }
 
-        result = invoker(resultArr);
+        if (resultArr) result = invoker(resultArr);
     } catch (error) { console.error('Unexpected error in func1.js:', error); }
     el.querySelector('#data_func_result').innerText = dfn.value + ' = ' + result;
     dfb.innerHTML = oldText;
